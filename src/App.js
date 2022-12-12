@@ -14,21 +14,41 @@ function App() {
 
 	const submitHandler = event => {
 		event.preventDefault()
+		logicHandler()
+	}
+
+	const logicHandler = () => {
 		const selectValue = selectRef.current.value
 		const lengthValue = lengthRef.current.value
 		if (selectValue === 'pin') {
 			password = Pin(lengthValue)
+			setPass(password)
 		}
 		if (selectValue === 'standard') {
 			password = Standard(lengthValue)
+			setPass(password)
 		}
 		if (selectValue === 'smallAndBig') {
 			password = SmallAndBig(lengthValue)
+			setPass(password)
 		}
 		if (selectValue === 'special') {
 			password = Special(lengthValue)
+			if (
+				password.includes('!') ||
+				password.includes('@') ||
+				password.includes('#') ||
+				password.includes('$') ||
+				password.includes('%') ||
+				password.includes('^') ||
+				password.includes('&') ||
+				password.includes('*')
+			) {
+				setPass(password)
+			} else {
+				logicHandler()
+			}
 		}
-		setPass(password)
 	}
 
 	return (

@@ -11,7 +11,7 @@
 	color: #181d31;
 }
 .form {
-	width: 70vw;
+	width: 90vw;
 	height: 50vh;
 	max-width: 600px;
 	max-height: 400px;
@@ -31,11 +31,12 @@
 }
 
 .form select {
-	width: 50%;
+	width: 90%;
+	max-width: 300px;
 }
 
 .form input {
-	width: 30%;
+	width: 100px;
 }
 
 .form button {
@@ -55,7 +56,7 @@
 
 .passwordBox {
 	margin-top: 20px;
-	width: 70vw;
+	width: 90vw;
 	height: 150px;
 	max-width: 600px;
 	padding: 10px;
